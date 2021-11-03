@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  backend:
+    container_name: sovet_bot_bot
+    build: ./
+    restart: always
+    volumes: 
+      - ~/mnt/ssdb:/usr/src/app/main/db
+    ports:
+      - mode: host
+        protocol: tcp
+        published: 3005
+        target: 5000
+
